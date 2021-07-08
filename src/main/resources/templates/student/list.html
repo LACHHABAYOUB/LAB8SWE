@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Mum Schedule</title>
+	<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous">
+	<script type="text/javascript" src="js/src/studentRest.js" ></script>
+
+</head>
+
+<body>
+
+<section class="col-8 my-2 mx-auto main-container">
+	<article class="card mt-4">
+		<div>
+			<a href="/">Home</a> | <a href="/student/list">Students</a>| <a href="/student/new">Create New Students</a>
+		</div>
+		<h4 class="card-header text-center text-secondary py-3">Students List</h4>
+		</br></br>
+		<a href="/student/new" class="btn btn-lg btn-primary mx-2" type="submit">Create New Students</a>
+
+		<div class="card-body">
+			<form action="/student/search" method="get">
+				<input id="searchString" name="searchString" type="text" th:value="${searchString}" placeholder="Enter a text to search for students" autofocus>
+				<button id="btnSearch" type="submit">Search</button>
+			</form>
+			<table class="mt-4 table table-borderless table-striped table-hover">
+				<thead>
+				<tr>
+					<th>#</th>
+					<th>Id</th>
+					<th>Number</th>
+					<th>First Name</th>
+					<th>Middle Name</th>
+					<th>Last Name</th>
+					<th>cgpa</th>
+					<th>Enrollment Date</th>
+					<th>Is international</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="student,c : ${students}">
+					<th th:text="${c.count}+${'.'}"></th>
+					<td th:text="${student.id}"></td>
+					<td th:text="${student.number}"></td>
+					<td th:text="${student.firstName}"></td>
+					<td th:text="${student.middleName}"></td>
+					<td th:text="${student.lastName}"></td>
+					<td th:text="${student.cgpa}"></td>
+					<td th:text="${student.enrollmentDate}"></td>
+					<td th:text="${student.isInternational}"></td>
+					<td><a
+							th:href="@{'/student/edit/{studentId}'(studentId=${student.id})}">Edit</a>
+					</td>
+					<td><a
+							th:href="@{'/student/delete/{studentId}'(studentId=${student.id})}">Delete</a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</article>
+
+
+</section>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Mum Schedule</title>
+	<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous">
+	<script type="text/javascript" src="js/src/studentRest.js" ></script>
+
+</head>
+
+<body>
+<section class="col-8 my-2 mx-auto main-container">
+	<article class="card mt-4">
+		<div>
+			<a href="/">Home</a> | <a href="/student/list">Students</a>| <a href="/student/new">Create New Students</a>
+		</div>
+		<h4 class="card-header text-center text-secondary py-3">Create a
+			New Student</h4>
+		<div class="card-body">
+			<form action="/student/new" method="post" th:object="${student}">
+				<div class="form-control">
+					<div>
+						<label for="title">Number</label>
+					</div>
+					<div>
+						<input id="number" name="number" th:value="${student.number}"
+							   type="text">
+					</div>
+					<div>
+					<span style="color: red;" th:if="${#fields.hasErrors('number')}"
+						  th:errors="*{number}"></span>
+					</div>
+				</div>
+				<div class="form-control">
+					<div>
+						<label for="firstName">First name</label>
+					</div>
+					<div>
+						<input id="firstName" name="firstName"
+							   th:value="${student.firstName}" type="text">
+					</div>
+					<div>
+					<span style="color: red;" th:if="${#fields.hasErrors('firstName')}"
+						  th:errors="*{firstName}"></span>
+					</div>
+				</div>
+				<div class="form-control">
+					<div>
+						<label for="middleName">Middle name</label>
+					</div>
+					<div>
+						<input id="middleName" name="middleName"
+							   th:value="${student.middleName}" type="text">
+					</div>
+				</div>
+				<div class="form-control">
+					<div>
+						<label for="lastName">Last name</label>
+					</div>
+					<div>
+						<input id="lastName" name="lastName" th:value="${student.lastName}"
+							   type="text">
+					</div>
+					<div>
+					<span style="color: red;" th:if="${#fields.hasErrors('lastName')}"
+						  th:errors="*{lastName}"></span>
+					</div>
+				</div>
+				<div class="form-control">
+					<div>
+						<label for="cgpa">cgpa</label>
+					</div>
+					<div>
+						<input id="cgpa" name="cgpa" th:value="${student.cgpa}"
+							   type="number" step="0.1" max="4.0">
+					</div>
+				</div>
+				<div class="form-control">
+					<div>
+						<label for="enrollmentDate">Enrollment date</label>
+					</div>
+					<div>
+						<input id="enrollmentDate" name="enrollmentDate"
+							   th:value="${student.enrollmentDate}" type="date">
+					</div>
+					<div>
+					<span style="color: red;" th:if="${#fields.hasErrors('enrollmentDate')}"
+						  th:errors="*{enrollmentDate}"></span>
+					</div>
+				</div>
+				<div class="form-control">
+					<div>Is international?</div>
+					<select th:field="*{isInternational}">
+						<option value="true">Yes</option>
+						<option value="false">No</option>
+					</select>
+				</div>
+				<div>
+					<button id="btnSave" class="btn btn-lg btn-primary mx-2" type="submit">Save Student</button>
+				</div>
+			</form>
+		</div>
+	</article>
+</section>
+</body>
+</html>
