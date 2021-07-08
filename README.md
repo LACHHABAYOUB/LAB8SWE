@@ -1,4 +1,4 @@
-# Lab 9 eRegistrarWebAPI SWE CS425
+# Lab 8 eRegistrar SWE CS425
 
 An online Student CRUD
 
@@ -9,11 +9,12 @@ App Build with Spring Framework as Back-End.
 ```sh
 1.1 Requirement
 
-http://localhost/eregistrar/api/student/list - Displays JSON array of Students data.
-http://localhost/eregistrar/api/student/register - Register a new Student into the system
-http://localhost/eregistrar/api/student/get/1 - Read/display a Student data for student with ID, 1.
-http://localhost/eregistrar/api/student/get/1 - Retrieves and Updates Student data for student with ID, 1.
-http://localhost/eregistrar/api/student/delete/3 - Delete the student data for student with ID, 3.
+Display a homepage for the web app (e.g. url - http://localhost/eregistrar/home etc) which presents menu of items/links on a navigation bar.
+Display List of Students - presents to the user, a list of all the students who have been registered in the university. You may display the data in an html table.
+Register a New Student - enables the user (e.g. the university registrar) to add a new Student into the system, using an html form.
+Edit a Student's registration data - enables the user (e.g. the university registrar) to retrieve a Student's registration data, update it and save the change(s) to into the system.
+Delete a student's registration data.
+Also add a feature in the application, to provide a means for the user to be able to search for Students. 
 
 
 ```
@@ -60,7 +61,7 @@ https://www.mysql.com/downloads/
     spring.datasource.password=YOUR PASSWORD
 -After that you can run the project 
 
-2- Create Database in MySql  Named lab8
+2- Create Database in MySql  Named lab8DB
 
 ```
 
@@ -71,7 +72,15 @@ https://www.mysql.com/downloads/
 Ayoub lachhab 611939
 
 ```
-5 Copyrights
+
+5 Demonstration of the application
+
+```sh
+https://youtu.be/v5iy4LOaY4k
+
+```
+
+6 Copyrights
 ```sh
 Copyrights Maharishi international university ©2021 All Rights Reserved
 ```
