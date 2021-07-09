@@ -2,7 +2,7 @@
 
 An online Student CRUD
 
-App Build with Spring Framework as Back-End and thymeleaf java as front-end .
+App Build with Spring Framework as Back-End and thymeleaf java as front-end.
 
 1 Getting Started
 
